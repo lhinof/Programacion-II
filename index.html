@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programación Orientada a Objetos - Ejemplo</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      /* Quitar flex y height para que el contenido inicie arriba */
+      /* display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; */
+    }
+    .container {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 80%;
+      max-width: 800px;
+      margin: 40px auto 0 auto; /* Centrar horizontal y dar espacio arriba */
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: 'Courier New', Courier, monospace;
+      color: #333;
+      line-height: 1.5;
+    }
+    .highlight {
+      background-color: #e1f7d5;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-weight: bold;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    @media (max-width: 600px) {
+      .container {
+        width: 98%;
+        padding: 10px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      button {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <h1>Ejemplo de Programación Orientada a Objetos</h1>
+
+    <pre>
+class <span class="highlight">Animal</span> {
+  constructor(nombre, tipo) {
+    this.nombre = nombre;
+    this.tipo = tipo;
+  }
+
+  <span class="highlight">hablar</span>() {
+    return `Soy un ${this.tipo} y mi nombre es ${this.nombre}.`;
+  }
+}
+
+class <span class="highlight">Perro</span> extends Animal {
+  constructor(nombre) {
+    super(nombre, 'perro');
+  }
+
+  <span class="highlight">hablar</span>() {
+    return `${this.nombre} dice ¡Guau!`;
+  }
+}
+
+class <span class="highlight">Gato</span> extends Animal {
+  constructor(nombre) {
+    super(nombre, 'gato');
+  }
+
+  <span class="highlight">hablar</span>() {
+    return `${this.nombre} dice ¡Miau!`;
+  }
+}
+
+const perro1 = new Perro('Max');
+const gato1 = new Gato('Git');
+
+console.log(perro1.hablar());
+console.log(gato1.hablar());
+    </pre>
+    <br>
+    <h1>Nombre completo: Luis Arturo Hino Flores</h1>
+    <h5>Enlace de su GitHub</h5>
+    <a href="https://github.com/lhinof" >https://github.com/lhinof/ProgramacionII</a>
+    <br>
+    <br>
+    <br>
+
+    <button onclick="ejecutarCodigo()">Ver Resultado</button>
+
+    <div id="resultado" style="font-size: 1.2rem; text-align: center; color: #333;"></div>
+  </div>
+
+  <script>
+    function ejecutarCodigo() {
+      class Animal {
+        constructor(nombre, tipo) {
+          this.nombre = nombre;
+          this.tipo = tipo;
+        }
+
+        hablar() {
+          return `Soy un ${this.tipo} y mi nombre es ${this.nombre}.`;
+        }
+      }
+
+      class Perro extends Animal {
+        constructor(nombre) {
+          super(nombre, 'perro');
+        }
+
+        hablar() {
+          return `${this.nombre} dice ¡Guau!`;
+        }
+      }
+
+      class Gato extends Animal {
+        constructor(nombre) {
+          super(nombre, 'gato');
+        }
+
+        hablar() {
+          return `${this.nombre} dice ¡Miau!`;
+        }
+      }
+
+      const perro1 = new Perro('Max');
+      const gato1 = new Gato('Git');
+
+      const resultado = document.getElementById('resultado');
+      resultado.innerHTML = `
+        <p>${perro1.hablar()}</p>
+        <p>${gato1.hablar()}</p>
+      `;
+    }
+  </script>
+</body>
+</html>
