@@ -1,0 +1,2 @@
+Mi segundo parcial se subio en otro repositorio se pueden clonar desde https://github.com/lhinof/Segundo-parcial-de-121.git
+el codigo final son los que dicen ejercicio 1 y ejercicio 2
