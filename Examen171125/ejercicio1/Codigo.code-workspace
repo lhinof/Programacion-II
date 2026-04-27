@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../../../../../xampp/htdocs"
+		},
+		{
+			"path": "../../../../../../banco-web/db"
+		},
+		{
+			"path": "../../../../../../Downloads/she-plus-banking"
+		}
+	],
+	"settings": {}
+}
